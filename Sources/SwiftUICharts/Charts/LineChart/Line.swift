@@ -51,7 +51,7 @@ public struct Line: View {
     // see https://stackoverflow.com/a/62370919
     // This lets geometry be recalculated when device rotates. However it doesn't cover issue of app changing
     // from full screen to split view. Not possible in SwiftUI? Feedback submitted to apple FB8451194.
-    let orientationChanged = NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)
+    let orientationChanged = NotificationCenter.default.publisher(for: NSNotification.Name("URLContainerDidAddURL"))
         .makeConnectable()
         .autoconnect()
     
